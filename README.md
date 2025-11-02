@@ -1,70 +1,65 @@
-# Translation Management System (TMS)
+# 🌐 Translation Management System (TMS)
 
-A Spring Boot-based Translation Management System that helps manage translation keys and their localized content.
+A **Spring Boot**-based Translation Management System that helps manage translation keys and their localized content.  
+This project provides a scalable foundation for applications that require internationalization (i18n) and localization (L10n) support.
 
-## Architecture & Design
+---
 
-### SOLID Principles Applied
+## 🚀 Features
 
-1. **Single Responsibility Principle (SRP)**
-   - Each class has a single responsibility
-   - Controllers handle HTTP requests
-   - Services contain business logic
-   - Repositories manage data access
-   - Mappers handle object transformations
+- Manage translation keys and localized values
+- RESTful API for CRUD operations
+- Modular and scalable architecture
+- Adheres to **SOLID** design principles
+- Uses popular design patterns for maintainability and testability
+- Built with **Spring Boot**, **Spring Data JPA**, and **Lombok**
 
-2. **Open/Closed Principle (OCP)**
-   - Open for extension but closed for modification
-   - Interfaces define contracts (e.g., `TranslationKeyService`,
-      - New functionality can be added by implementing interfaces without modifying existing code
+---
 
-3. **Liskov Substitution Principle (LSP)**
-   - Derived classes can be substituted for their base classes
-   - All service implementations can be replaced with their interface types
+## 🏗️ Architecture & Design
 
-4. **Interface Segregation Principle (ISP)**
-   - Specific interfaces for different functionalities
-   - Example: Separate repository interfaces for different entities
+The application is designed with **clean architecture** principles and a **layered structure** that separates concerns.
 
-5. **Dependency Inversion Principle (DIP)**
-   - High-level modules don't depend on low-level modules
-   - Both depend on abstractions
-   - Dependency injection is used throughout the application
+### ⚙️ SOLID Principles Applied
 
-### Design Patterns Used
+1. **Single Responsibility Principle (SRP)**  
+   - Each class focuses on a single concern.  
+   - **Controllers** handle HTTP requests  
+   - **Services** encapsulate business logic  
+   - **Repositories** handle persistence  
+   - **Mappers** convert between entities and DTOs  
 
-1. **MVC (Model-View-Controller)**
-   - Controllers handle HTTP requests and responses
-   - Services contain business logic
-   - Models represent the data structure
+2. **Open/Closed Principle (OCP)**  
+   - Components are open for extension but closed for modification.  
+   - New functionality can be added via interfaces without changing existing code.  
 
-2. **Repository Pattern**
-   - Abstracts data access layer
-   - Provides a collection-like interface for accessing domain objects
-   - Used in all `*Repository` interfaces
+3. **Liskov Substitution Principle (LSP)**  
+   - Service implementations can be replaced through their interfaces without breaking functionality.  
 
-3. **DTO (Data Transfer Object)**
-   - Used to transfer data between processes
-   - Example: `TranslationKeyRequest`, `TranslationKeyResponse`
+4. **Interface Segregation Principle (ISP)**  
+   - Interfaces are small and specific to their domain.  
+   - Example: Separate repository interfaces for different entities.  
 
-4. **Builder Pattern**
-   - Used via Lombok's `@Builder` for object creation
-   - Provides a clear and flexible way to create complex objects
+5. **Dependency Inversion Principle (DIP)**  
+   - High-level modules depend on abstractions, not concrete classes.  
+   - Implemented via **Spring’s dependency injection**.  
 
-5. **Strategy Pattern**
-   - Different strategies for searching and filtering
-   - Example: Multiple search methods in repositories
+---
 
-6. **Facade Pattern**
-   - Service layer acts as a facade to the complex business logic
-   - Simplifies the interface to the subsystem
+### 🧩 Design Patterns Used
 
-7. **Dependency Injection**
-   - Used throughout the application
-   - Promotes loose coupling and testability
+| Pattern | Description |
+|----------|--------------|
+| **MVC** | Separates application layers into Controller, Service, and Model. |
+| **Repository** | Abstracts database access through repository interfaces. |
+| **DTO (Data Transfer Object)** | Transfers data between layers (e.g., `TranslationKeyRequest`, `TranslationKeyResponse`). |
+| **Builder** | Simplifies object creation using Lombok’s `@Builder`. |
+| **Strategy** | Supports different search and filtering strategies. |
+| **Facade** | The service layer provides a simplified interface to complex business logic. |
+| **Dependency Injection** | Promotes modularity and testability. |
+| **Observer** | Utilizes Spring’s event system for auditing and notifications. |
 
-8. **Observer Pattern**
-   - Used in Spring's event handling
-   - Example: Application events for auditing or notifications
+---
 
-### Project Structure
+## 📁 Project Structure
+
